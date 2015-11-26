@@ -1,22 +1,16 @@
-////////////////////////////////////////////////////////////////////
-//DeRap: Produced from mikero's Dos Tools Dll version 4.88
-//Wed Dec 31 20:29:17 2014 : Source 'file' date Wed Dec 31 20:29:17 2014
-//http://dev-heaven.net/projects/list_files/mikero-pbodll
-////////////////////////////////////////////////////////////////////
+#define _ARMA_ 
 
-#define _ARMA_ //IMPORTANT!!
 
-//Class map_stratis : config.bin{
 class CfgPatches
 {
-	class CAPS_Gotland //Look it up here: https://sites.google.com/site/islandconfigs/home
+	class HEI_Island 
 	{
-		units[] = {"CAPS_Gotland"}; //not sure if it must be filled, as Stratis didn't, but A2 Maps did...
+		units[] = {"HEI_Island"}; //not sure if it must be filled, as Stratis didn't, but A2 Maps did...
 		weapons[] = {};
 		requiredVersion = 0.1;
-		requiredAddons[] = {"A3_Data_F","A3_Roads_F","A3_Structures_F","A3_Map_Data","jbad_Structures"};
-		author = "CAPTNCAPS"; //Author Name (this entry exists twice!)
-		mail = "AuthorsEmail@Adress.com";
+		requiredAddons[] = {"A3_Data_F","A3_Roads_F","A3_Structures_F","A3_Map_Data"};
+		mail = "";
+		mail = "";
 	};
 };
 class CfgVehicles{}; //I think useless in ArmA3
@@ -24,7 +18,6 @@ class CfgWorlds
 {
 	class DefaultWorld
 	{
-		cutscenes[] = {""}; //plays in main menu (this entry exists twice!)
 		class Weather
 		{
 			class Overcast;
@@ -52,7 +45,7 @@ class CfgWorlds
 	};
 	
 	class DefaultLighting;
-	class CAPS_Gotland: CAWorld
+	class HEI_Island: CAWorld
 	{
 		dynLightMinBrightnessAmbientCoef = 0.5;
 		dynLightMinBrightnessAbsolute = 0.05;
@@ -2641,23 +2634,23 @@ class CfgWorlds
 		skyTexture = "A3\Map_Stratis\data\sky_semicloudy_sky.paa"; //Not sure, because ArmA uses Simulweather, which brings it's own, dynamic sky stuff...
 		skyTextureR = "A3\Map_Stratis\data\sky_semicloudy_lco.paa"; //~
 		access = 3; //unknown, leave 3 set
-		worldId = 1337; //unknown, change to any number you like
+		worldId = 1969; //unknown, change to any number you like
 		cutscenes[] = {""}; //plays in main menu
-		description = "Gotland, Sweden"; //Shown as name when choosing Island
+		description = "Apollo Atol"; //Shown as name when choosing Island
 		icon = ""; //Icon in front of Island Name
-		worldName = "\CAPS\MyRealTerrain\MyRealTerrain.wrp"; //path to your WRP file
+		worldName = "\heisen\island\island.wrp"; //path to your WRP file
 		pictureMap = "A3\map_Stratis\data\pictureMap_ca.paa"; //Editor Picture
 		pictureShot = "A3\map_Stratis\data\ui_Stratis_ca.paa"; //Loadingscreen Picture
 		plateFormat = "AS$-####"; //unknown
 		plateLetters = "ABCDEGHIKLMNOPRSTVXZ"; //unknown
-		author = "CAPTNCAPS"; //Author
+		author = ""; //Author
 		mapSize = 2048; //probably the same number as your terrain image size
 		mapZone = 35; //unknown
 		longitude = 18.28; //west is negative!!
 		latitude = -57.29; //south is positive!!
 		elevationOffset = 0;//raise the whole map? not sure if waterlevel changes (heightmap 23m above sea ; IRL 123m above sea ; offset 100m)
 		envTexture = "A3\Data_f\env_land_ca.tga"; //reflection image, you probably want to change this, so it's not greece anymore...
-		newRoadsShape = "\CAPS\MyRealTerrain\data\roads\roads.shp"; //roads file!
+		//newRoadsShape = "\PROPHECY\Apollo_Isle\data\roads\roads.shp"; //roads file!
 		class OutsideTerrain //so-called "Debug" area of ArmA
 		{
 			satellite = "A3\map_Stratis\data\s_satout_co.paa";
@@ -3066,23 +3059,23 @@ class CfgWorlds
 			};
 		};
 		
-		#include "cfgClutter.h"
-		
-		class Names //City Names
+		#include "cfgClutter.hpp"
+		/*
+		class Names //City Names       
 		{
-			#include "MyRealTerrain.h"
+			#include "Apollo_Isle.hpp"
 		};
-		
+		*/
 		safePositionAnchor[] = {3874.47,4093.64}; //??
 		safePositionRadius = 1900; //??
-		loadingTexts[] = {"Gotland is a beautiful island in the baltic sea", "Gotland belongs to sweden"}; //Loading Texts
+		loadingTexts[] = {"Island, the dank map made by the most dank dev ever Heisen."}; //Loading Texts
 	};
-	initWorld = "CAPS_Gotland";//??
-	demoWorld = "CAPS_Gotland";//??
+	initWorld = "HEI_Island";//??
+	demoWorld = "HEI_Island";//??
 };
 class CfgWorldList//??
 {
-	class CAPS_Gotland{};
+	class HEI_Island{};
 };
 //};
-#include "cfgSurfaces.h"
+#include "cfgSurfaces.hpp"
