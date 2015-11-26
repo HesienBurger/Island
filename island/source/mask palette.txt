@@ -1,0 +1,4 @@
+R, G, B, Climate, Land type
+230, 230, 120, "Tropical", "Sand",
+140, 220, 80, "Tropical", "Grass",
+120, 230, 80, "Tropical", "Lush grass",
